@@ -10,9 +10,23 @@
 
 # GATES
 
-GATES is a server-side library that blocks disposable-email signups and prevents verified accounts from claiming the same canonical email within a project.
+GATES is a server-side library that blocks disposable-email signups and helps prevent multiple accounts created with email aliases, such as `+tags` and dotted Gmail addresses.
 
-It uses [IronDome](https://irondome.dev) to check disposable addresses, Mail Canon to normalize provider-specific aliases, and PostgreSQL to record verified ownership. It works with Better Auth, Auth0 and Supabase Auth without replacing your authentication provider, email sender or sessions.
+It combines [IronDome](https://irondome.dev) disposable-email checks, Mail Canon normalization and PostgreSQL-backed ownership checks. Connectors are available for **Better Auth, Auth0 and Supabase Auth**.
+
+## Email providers
+
+Alias rules are provider-specific. GATES does not strip dots or `+tags` from every email address.
+
+| Provider | Default alias matching |
+| --- | --- |
+| Gmail / Googlemail | Removes dots and `+tags`; maps `googlemail.com` to `gmail.com`. |
+| Outlook / Hotmail / Live / MSN | Removes `+tags` on `outlook.com`, `hotmail.com`, `live.com` and `msn.com`. Keeps dots and each domain distinct. |
+| Proton | Removes `+tags`, dots, underscores and hyphens. Keeps `proton.me`, `protonmail.com`, `protonmail.ch` and `pm.me` distinct. |
+| Fastmail | Removes `+tags` on 130 supported first-party domains and resolves one-level subdomain aliases. Keeps dots and each root domain distinct. |
+| Custom domains | Preserves the local part by default. Configure exact-domain rules for lowercasing, `+tag` removal or dot removal. |
+
+Custom rules should only combine addresses you know reach the same mailbox. Google Workspace and Microsoft 365 custom domains do not inherit consumer-provider rules. GATES keeps the original address for delivery and verification; duplicate ownership is enforced within each project after verification.
 
 ## Installation
 
