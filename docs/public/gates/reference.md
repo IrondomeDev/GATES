@@ -1,6 +1,6 @@
 # GATES API reference
 
-The public package is `irondome-gates`. The brand name is GATES; imports retain the package identifier. The 0.3.0 release uses Node.js 22+ and ESM. See [installation](installation.md) for its current availability.
+The public package is `irondome-gates`. The brand name is GATES; imports retain the package identifier. The 0.1.0 release uses Node.js 22+ and ESM. See [installation](installation.md) for its current availability.
 
 ## Recommended engine
 

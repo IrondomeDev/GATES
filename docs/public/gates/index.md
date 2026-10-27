@@ -12,7 +12,7 @@ Your auth provider still owns passwords, sessions and email verification. A matc
 | Auth0 | [Auth0 quickstart](quickstart/auth0.md) | Actions, a trusted backend and fresh provider checks. |
 | Supabase Auth | [Supabase quickstart](quickstart/supabase.md) | Signed Auth Hooks, PKCE confirmation and live protected-route checks. |
 
-The guides target `irondome-gates` 0.3.0, Node.js 22+ and ESM. Follow [installation](installation.md) to install the package and its application dependencies.
+The guides target `irondome-gates` 0.1.0, Node.js 22+ and ESM. Follow [installation](installation.md) to install the package and its application dependencies.
 
 For a new application, follow your provider quickstart from an empty GATES registry. For an application with users, read [migration](migration.md) before enabling enforcement. Existing verified accounts need reviewed ownership records; installing a hook alone does not backfill them.
 

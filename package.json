@@ -1,6 +1,6 @@
 {
   "name": "irondome-gates",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "description": "Block disposable-email signups and email-alias abuse with Better Auth, Auth0 and Supabase.",
   "type": "module",
   "engines": {

@@ -8,7 +8,7 @@ Use GATES only in trusted server code. It requires Node.js 22 or later, ESM, Pos
 npm install irondome-gates pg
 ```
 
-Use `irondome-gates@0.3.0` to pin this release explicitly. Commit your application's lockfile. The package exports its public modules, TypeScript declarations and SQL migrations.
+Use `irondome-gates@0.1.0` to pin this release explicitly. Commit your application's lockfile. The package exports its public modules, TypeScript declarations and SQL migrations.
 
 To build a local artifact from a reviewed repository checkout:
 
@@ -21,7 +21,7 @@ npm pack
 In your application's directory, install the generated archive:
 
 ```sh
-npm install /absolute/path/to/irondome-gates-0.3.0.tgz
+npm install /absolute/path/to/irondome-gates-0.1.0.tgz
 npm install pg
 ```
 

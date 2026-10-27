@@ -216,7 +216,7 @@ export function createBetterAuthGate(config: BetterAuthGateOptions): BetterAuthG
       ...(ctx.request ? { request: ctx.request } : {}), ...(ctx.headers ? { headers: ctx.headers } : {}),
       asResponse: false, returnHeaders: false });
   });
-  const gatePlugin = { id: 'irondome-gate' as const, version: '0.3.0', endpoints: { changeEmail, verifyEmail } };
+  const gatePlugin = { id: 'irondome-gate' as const, version: '0.1.0', endpoints: { changeEmail, verifyEmail } };
   const plugins: [typeof gatePlugin, ...ReturnType<typeof genericOAuth>[]] = [gatePlugin, ...(oauthProviders.length ? [genericOAuth({ config: oauthProviders })] : [])];
 
   const authOptions = {
