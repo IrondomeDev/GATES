@@ -1,0 +1,153 @@
+{
+  "name": "@irondome-dev/gate",
+  "version": "0.3.0",
+  "description": "Block disposable-email signups and duplicate verified email identities with Better Auth, Auth0 and Supabase.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist/",
+    "migrations/",
+    "README.md",
+    "LICENSE",
+    "assets/brand/gates-dark.svg",
+    "docs/public/README.md",
+    "docs/public/gates/manifest.json",
+    "docs/public/gates/index.md",
+    "docs/public/gates/installation.md",
+    "docs/public/gates/database.md",
+    "docs/public/gates/quickstart/better-auth.md",
+    "docs/public/gates/quickstart/auth0.md",
+    "docs/public/gates/quickstart/supabase.md",
+    "docs/public/gates/email-matching.md",
+    "docs/public/gates/migration.md",
+    "docs/public/gates/deployment.md",
+    "docs/public/gates/reference.md",
+    "docs/public/gates/troubleshooting.md",
+    "examples/docs/README.md",
+    "examples/docs/better-auth.ts",
+    "examples/docs/auth0.ts",
+    "examples/docs/supabase.ts",
+    "examples/docs/tsconfig.json",
+    "examples/docs/better-auth-server.mjs",
+    "examples/docs/.env.example"
+  ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./postgres": {
+      "types": "./dist/storage/postgres/identity.d.ts",
+      "import": "./dist/storage/postgres/identity.js",
+      "default": "./dist/storage/postgres/identity.js"
+    },
+    "./better-auth": {
+      "types": "./dist/connectors/better-auth/index.d.ts",
+      "import": "./dist/connectors/better-auth/index.js",
+      "default": "./dist/connectors/better-auth/index.js"
+    },
+    "./better-auth/postgres": {
+      "types": "./dist/storage/postgres/better-auth.d.ts",
+      "import": "./dist/storage/postgres/better-auth.js",
+      "default": "./dist/storage/postgres/better-auth.js"
+    },
+    "./migrations/001_identity.sql": "./migrations/001_identity.sql",
+    "./migrations/002_lifecycle.sql": "./migrations/002_lifecycle.sql",
+    "./migrations/003_better_auth.sql": "./migrations/003_better_auth.sql",
+    "./auth0": {
+      "types": "./dist/connectors/auth0/index.d.ts",
+      "import": "./dist/connectors/auth0/index.js",
+      "default": "./dist/connectors/auth0/index.js"
+    },
+    "./supabase": {
+      "types": "./dist/connectors/supabase/index.d.ts",
+      "import": "./dist/connectors/supabase/index.js",
+      "default": "./dist/connectors/supabase/index.js"
+    },
+    "./provider-lifecycle": {
+      "types": "./dist/core/provider-lifecycle.d.ts",
+      "import": "./dist/core/provider-lifecycle.js",
+      "default": "./dist/core/provider-lifecycle.js"
+    },
+    "./provider-lifecycle/postgres": {
+      "types": "./dist/storage/postgres/provider-lifecycle.d.ts",
+      "import": "./dist/storage/postgres/provider-lifecycle.js",
+      "default": "./dist/storage/postgres/provider-lifecycle.js"
+    },
+    "./migrations/004_provider_operations.sql": "./migrations/004_provider_operations.sql",
+    "./policy-migration/postgres": {
+      "types": "./dist/storage/postgres/policy-migration.d.ts",
+      "import": "./dist/storage/postgres/policy-migration.js",
+      "default": "./dist/storage/postgres/policy-migration.js"
+    },
+    "./migrations/005_tenant_policy.sql": "./migrations/005_tenant_policy.sql",
+    "./online/postgres": {
+      "types": "./dist/storage/postgres/online.d.ts",
+      "import": "./dist/storage/postgres/online.js",
+      "default": "./dist/storage/postgres/online.js"
+    },
+    "./migrations/006_online_policy.sql": "./migrations/006_online_policy.sql"
+  },
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build:package": "node tools/build-package.mjs",
+    "prepack": "npm run build:package",
+    "package:smoke": "node tools/package-smoke.mjs",
+    "test": "npm run build && node --test .build/test/*.test.js",
+    "test:qualified": "node tools/test-qualified.mjs",
+    "check": "npm test",
+    "test:postgres": "npm run build && node --test .build/test/postgres*.test.js .build/test/lifecycle*.test.js",
+    "test:live": "npm run build && node tools/live-screening.mjs",
+    "backfill:dry-run": "npm run build && node .build/src/migration/cli.js",
+    "test:auth": "npm run build && node --test .build/test/better-auth*.test.js",
+    "test:providers": "npm run build && node --test .build/test/auth0*.test.js .build/test/supabase*.test.js .build/test/provider-lifecycle*.test.js",
+    "qualify:online": "npm run build:package && node --expose-gc tools/qualify-online.mjs",
+    "docs:check": "npm run build:package && node tools/check-public-docs.mjs && node node_modules/typescript/bin/tsc -p examples/docs/tsconfig.json && node --check examples/docs/better-auth-server.mjs && node examples/docs/better-auth-server.mjs --help",
+    "check:public": "node tools/check-public-tree.mjs",
+    "docs:export": "npm run docs:check && node tools/export-public-docs.mjs",
+    "release:check": "npm run check:public && npm run docs:check && npm run test:qualified && npm run package:smoke"
+  },
+  "dependencies": {
+    "mail-canon": "0.2.0",
+    "punycode": "2.3.1",
+    "tr46": "5.1.1"
+  },
+  "bundleDependencies": [
+    "mail-canon",
+    "tr46",
+    "punycode"
+  ],
+  "peerDependencies": {
+    "better-auth": "1.7.7"
+  },
+  "peerDependenciesMeta": {
+    "better-auth": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@auth0/actions": "0.35.0",
+    "@types/node": "25.9.9",
+    "better-auth": "1.7.7",
+    "jose": "6.2.13",
+    "pg": "8.23.1",
+    "standardwebhooks": "1.1.1",
+    "typescript": "7.0.2"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrondomeDev/GATES.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IrondomeDev/GATES/issues"
+  },
+  "homepage": "https://github.com/IrondomeDev/GATES#readme"
+}

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "node"
+    ],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": ".build",
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}

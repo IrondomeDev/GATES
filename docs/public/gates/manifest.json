@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "packageName": "@irondome-dev/gate",
+  "packageVersion": "0.3.0",
+  "publicationStatus": "draft",
+  "pages": [
+    {
+      "path": "docs/public/gates/index.md",
+      "route": "/docs/gates"
+    },
+    {
+      "path": "docs/public/gates/installation.md",
+      "route": "/docs/gates/installation"
+    },
+    {
+      "path": "docs/public/gates/database.md",
+      "route": "/docs/gates/database"
+    },
+    {
+      "path": "docs/public/gates/quickstart/better-auth.md",
+      "route": "/docs/gates/quickstart/better-auth"
+    },
+    {
+      "path": "docs/public/gates/quickstart/auth0.md",
+      "route": "/docs/gates/quickstart/auth0"
+    },
+    {
+      "path": "docs/public/gates/quickstart/supabase.md",
+      "route": "/docs/gates/quickstart/supabase"
+    },
+    {
+      "path": "docs/public/gates/email-matching.md",
+      "route": "/docs/gates/email-matching"
+    },
+    {
+      "path": "docs/public/gates/migration.md",
+      "route": "/docs/gates/migration"
+    },
+    {
+      "path": "docs/public/gates/deployment.md",
+      "route": "/docs/gates/deployment"
+    },
+    {
+      "path": "docs/public/gates/reference.md",
+      "route": "/docs/gates/reference"
+    },
+    {
+      "path": "docs/public/gates/troubleshooting.md",
+      "route": "/docs/gates/troubleshooting"
+    }
+  ],
+  "examples": [
+    "examples/docs/README.md",
+    "examples/docs/better-auth.ts",
+    "examples/docs/auth0.ts",
+    "examples/docs/supabase.ts",
+    "examples/docs/tsconfig.json",
+    "examples/docs/better-auth-server.mjs",
+    "examples/docs/.env.example"
+  ]
+}
