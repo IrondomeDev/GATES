@@ -16,7 +16,7 @@ and exact delivery addresses are ready.
 
 - Use Node.js 22 or newer and an ESM application.
 - Follow [installation](../installation.md) to obtain the current GATES artifact.
-  The package name is `@irondome-dev/gate`; the product name is GATES.
+  The package name is `irondome-gates`; the product name is GATES.
 - Install the pinned Better Auth release and your PostgreSQL driver:
 
 ```sh

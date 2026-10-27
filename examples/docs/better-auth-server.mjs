@@ -7,10 +7,10 @@ import { Pool } from 'pg';
 import { betterAuth } from 'better-auth';
 import { getMigrations } from 'better-auth/db/migration';
 import { fromNodeHeaders, toNodeHandler } from 'better-auth/node';
-import { createIronDomeClient } from '@irondome-dev/gate';
-import { createBetterAuthGate } from '@irondome-dev/gate/better-auth';
-import { createPostgresBetterAuthChangeStore } from '@irondome-dev/gate/better-auth/postgres';
-import { createOnlinePostgresGate } from '@irondome-dev/gate/online/postgres';
+import { createIronDomeClient } from 'irondome-gates';
+import { createBetterAuthGate } from 'irondome-gates/better-auth';
+import { createPostgresBetterAuthChangeStore } from 'irondome-gates/better-auth/postgres';
+import { createOnlinePostgresGate } from 'irondome-gates/online/postgres';
 
 const command = process.argv[2];
 if (command === '--help') {

@@ -40,4 +40,4 @@ Find the path that skipped the live GATES check. Common examples are raw Better 
 
 ## TypeScript cannot find a module or SQL export
 
-Use Node.js 22+, ESM and an installed package artifact. Confirm that the application imports `@irondome-dev/gate`, not the old `@irondome/gate` name or private `dist/` paths. Check the package version and its exports before changing bundler resolution options.
+Use Node.js 22+, ESM and an installed package artifact. Confirm that the application imports `irondome-gates`, not the old `@irondome/gate` name or private `dist/` paths. Check the package version and its exports before changing bundler resolution options.

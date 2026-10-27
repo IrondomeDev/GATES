@@ -30,7 +30,11 @@ Custom rules should only combine addresses you know reach the same mailbox. Goog
 
 ## Installation
 
-**Release status:** `@irondome-dev/gate@0.3.0` is a prepared release candidate, not yet published to npm. Use the [local artifact instructions](docs/public/gates/installation.md).
+```sh
+npm install irondome-gates pg
+```
+
+See the [installation guide](docs/public/gates/installation.md) for requirements and setup.
 
 **Requirements:** Node.js 22+, ESM and PostgreSQL. The Better Auth connector requires Better Auth 1.7.7.
 
@@ -59,7 +63,7 @@ A canonical match does not authenticate a user, merge accounts or establish a pe
 ## Example
 
 ```ts
-import { prepareEmail } from '@irondome-dev/gate';
+import { prepareEmail } from 'irondome-gates';
 
 const email = prepareEmail('alex+trial@gmail.com');
 console.log(email.canonical);     // alex@gmail.com

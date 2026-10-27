@@ -52,4 +52,4 @@ node tools/check-public-docs.mjs
 
 The TypeScript check verifies the examples against the package's actual public declarations. The documentation check validates the explicit page/example manifest, links and formatting and runs local canonicalization assertions. Neither proves your provider deployment, PostgreSQL grants or external email delivery. Complete the acceptance checklist in the relevant guide before using the integration with real accounts.
 
-Node.js 22+ and ESM are required. Better Auth's supported peer is pinned to 1.7.7. The GATES registry package remains unpublished until a separate approved release; [installation](../../docs/public/gates/installation.md) describes the local artifact path.
+Node.js 22+ and ESM are required. Better Auth's supported peer is pinned to 1.7.7. Install `irondome-gates` from npm; [installation](../../docs/public/gates/installation.md) also describes building a local artifact.

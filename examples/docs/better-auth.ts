@@ -1,14 +1,14 @@
 import { betterAuth, type BetterAuthOptions } from 'better-auth';
 import { getMigrations } from 'better-auth/db/migration';
 import { toNodeHandler } from 'better-auth/node';
-import { createIronDomeClient } from '@irondome-dev/gate';
+import { createIronDomeClient } from 'irondome-gates';
 import {
   createBetterAuthGate,
   type BetterAuthGateOptions,
-} from '@irondome-dev/gate/better-auth';
-import { createPostgresBetterAuthChangeStore } from '@irondome-dev/gate/better-auth/postgres';
-import { createOnlinePostgresGate } from '@irondome-dev/gate/online/postgres';
-import type { PgPool } from '@irondome-dev/gate/postgres';
+} from 'irondome-gates/better-auth';
+import { createPostgresBetterAuthChangeStore } from 'irondome-gates/better-auth/postgres';
+import { createOnlinePostgresGate } from 'irondome-gates/online/postgres';
+import type { PgPool } from 'irondome-gates/postgres';
 
 export interface BetterAuthApplicationConfig {
   pool: PgPool & NonNullable<BetterAuthOptions['database']>;

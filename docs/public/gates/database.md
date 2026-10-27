@@ -28,7 +28,7 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 const path = fileURLToPath(
-  import.meta.resolve('@irondome-dev/gate/migrations/001_identity.sql'),
+  import.meta.resolve('irondome-gates/migrations/001_identity.sql'),
 );
 const sql = await readFile(path, 'utf8');
 ```

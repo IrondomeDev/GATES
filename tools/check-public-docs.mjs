@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
-import { createEmailPolicy, prepareEmail } from '@irondome-dev/gate';
+import { createEmailPolicy, prepareEmail } from 'irondome-gates';
 
 const root = process.cwd();
 const manifest = JSON.parse(await readFile('docs/public/gates/manifest.json', 'utf8'));

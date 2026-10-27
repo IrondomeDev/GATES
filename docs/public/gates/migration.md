@@ -18,7 +18,7 @@ Export current provider-verified users with a stable tenant ID, never-reused use
 Use the same policy you intend to deploy:
 
 ```ts
-import { createEmailPolicy, dryRunBackfill } from '@irondome-dev/gate';
+import { createEmailPolicy, dryRunBackfill } from 'irondome-gates';
 
 const policy = createEmailPolicy();
 const report = dryRunBackfill(providerRows, { emailPolicy: policy });
@@ -36,7 +36,7 @@ The current supervised `applyBackfill` utility is a fixed-policy adoption path. 
 Use `createLifecycleGate` with `createPostgresIdentityRegistry` and the same canonical rules for this initial controlled operation. Its required migrations are 001, 002 and 005, plus the provider's store migrations. The apply utility accepts at most 100,000 rows, validates the whole input before writes, and requires a `revalidate` callback that checks fresh provider state for every row.
 
 ```ts
-import { applyBackfill } from '@irondome-dev/gate';
+import { applyBackfill } from 'irondome-gates';
 
 const result = await applyBackfill(fixedPolicyEngine, providerRows, {
   concurrency: 4,
@@ -71,7 +71,7 @@ First install [database migrations](database.md), deploy the online engine every
 Start a job from trusted operator code:
 
 ```ts
-import { createEmailPolicy } from '@irondome-dev/gate';
+import { createEmailPolicy } from 'irondome-gates';
 
 const job = await engine.migration.begin({
   tenantId,

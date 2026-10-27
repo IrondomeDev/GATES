@@ -1,9 +1,9 @@
-import { createIronDomeClient } from '@irondome-dev/gate';
-import { createOnlinePostgresGate } from '@irondome-dev/gate/online/postgres';
-import { createSupabaseGate, type SupabaseProviderUser } from '@irondome-dev/gate/supabase';
-import type { PgPool } from '@irondome-dev/gate/postgres';
-import { createProviderLifecycle } from '@irondome-dev/gate/provider-lifecycle';
-import { createPostgresProviderOperationStore } from '@irondome-dev/gate/provider-lifecycle/postgres';
+import { createIronDomeClient } from 'irondome-gates';
+import { createOnlinePostgresGate } from 'irondome-gates/online/postgres';
+import { createSupabaseGate, type SupabaseProviderUser } from 'irondome-gates/supabase';
+import type { PgPool } from 'irondome-gates/postgres';
+import { createProviderLifecycle } from 'irondome-gates/provider-lifecycle';
+import { createPostgresProviderOperationStore } from 'irondome-gates/provider-lifecycle/postgres';
 
 export interface SupabaseExampleOptions {
   pool: PgPool;

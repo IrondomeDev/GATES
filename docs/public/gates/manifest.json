@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "packageName": "@irondome-dev/gate",
+  "packageName": "irondome-gates",
   "packageVersion": "0.3.0",
   "publicationStatus": "draft",
   "pages": [

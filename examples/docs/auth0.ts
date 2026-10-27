@@ -1,9 +1,9 @@
-import { createIronDomeClient } from '@irondome-dev/gate';
-import { createOnlinePostgresGate } from '@irondome-dev/gate/online/postgres';
-import { createAuth0Gate, type Auth0CurrentUser } from '@irondome-dev/gate/auth0';
-import type { PgPool } from '@irondome-dev/gate/postgres';
-import { createProviderLifecycle } from '@irondome-dev/gate/provider-lifecycle';
-import { createPostgresProviderOperationStore } from '@irondome-dev/gate/provider-lifecycle/postgres';
+import { createIronDomeClient } from 'irondome-gates';
+import { createOnlinePostgresGate } from 'irondome-gates/online/postgres';
+import { createAuth0Gate, type Auth0CurrentUser } from 'irondome-gates/auth0';
+import type { PgPool } from 'irondome-gates/postgres';
+import { createProviderLifecycle } from 'irondome-gates/provider-lifecycle';
+import { createPostgresProviderOperationStore } from 'irondome-gates/provider-lifecycle/postgres';
 
 export interface Auth0ExampleOptions {
   pool: PgPool;

@@ -18,7 +18,7 @@ Do not infer an organization's mailbox behavior from its MX host. A domain hoste
 Only add transformations that the domain's mail system actually implements. Rules match an exact canonical domain, not subdomains or suffixes:
 
 ```ts
-import { createEmailPolicy } from '@irondome-dev/gate';
+import { createEmailPolicy } from 'irondome-gates';
 
 const policy = createEmailPolicy({
   'company.example': { lowercase: true, stripPlusTag: true },

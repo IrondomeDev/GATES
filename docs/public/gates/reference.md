@@ -1,10 +1,10 @@
 # GATES API reference
 
-The public package is `@irondome-dev/gate`. The brand name is GATES; imports retain the package identifier. The prepared 0.3.0 release uses Node.js 22+ and ESM. See [installation](installation.md) for its current availability.
+The public package is `irondome-gates`. The brand name is GATES; imports retain the package identifier. The 0.3.0 release uses Node.js 22+ and ESM. See [installation](installation.md) for its current availability.
 
 ## Recommended engine
 
-Import `createOnlinePostgresGate` from `@irondome-dev/gate/online/postgres`. It accepts a `pg.Pool`-compatible pool and server-owned configuration. Pass the resulting engine to your provider adapter.
+Import `createOnlinePostgresGate` from `irondome-gates/online/postgres`. It accepts a `pg.Pool`-compatible pool and server-owned configuration. Pass the resulting engine to your provider adapter.
 
 | Method | Purpose and trust boundary |
 | --- | --- |

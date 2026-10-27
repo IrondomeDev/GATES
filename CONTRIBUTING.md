@@ -68,8 +68,8 @@ fresh consumer projects. It stops at the first failure. It does not publish, tag
 push or change hosted provider configuration. Missing integration prerequisites
 are a failed release check, not permission to skip qualification.
 
-Confirm that the npm account has publish access to the `@irondome-dev` scope and
-meets npm's authentication requirements. Confirm the intended version in
+Confirm that the npm account can publish `irondome-gates` and meets npm's
+authentication requirements. Confirm the intended version in
 `package.json` has not already been published, and review the dry-run file list.
 The package uses `prepack` to build its runtime; this does **not** automatically
 run `release:check`. Keep the source unchanged between checks and publication.
