@@ -8,7 +8,7 @@ assert.equal(result.status, 0, 'run this check from a Git checkout');
 const manifest = JSON.parse(await readFile('docs/public/gates/manifest.json', 'utf8'));
 const allowedDocs = new Set(['docs/public/README.md', 'docs/public/gates/manifest.json', ...manifest.pages.map(page => page.path)]);
 const allowedExamples = new Set(manifest.examples);
-const rootFiles = new Set(['.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'package.json', 'package-lock.json', 'tsconfig.json', 'tsconfig.build.json']);
+const rootFiles = new Set(['.gitignore', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'SECURITY.md', 'package.json', 'package-lock.json', 'tsconfig.json', 'tsconfig.build.json']);
 const allowedTools = new Set(['build-package.mjs', 'package-smoke.mjs', 'test-qualified.mjs', 'check-public-docs.mjs', 'export-public-docs.mjs', 'check-public-tree.mjs', 'live-screening.mjs', 'qualify-online.mjs']);
 const allowedAssets = new Set(['assets/brand/gates-dark.svg']);
 const invalid = [];
