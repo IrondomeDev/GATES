@@ -3,6 +3,12 @@
 </p>
 
 <p align="center">
+  <a href="https://www.npmjs.com/package/irondome-gates">
+    <img src="https://img.shields.io/npm/v/irondome-gates?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=npm&amp;color=CB3837" alt="irondome-gates on npm" />
+  </a>
+</p>
+
+<p align="center">
   <a href="docs/public/gates/index.md"><strong>Documentation</strong></a> ·
   <a href="examples/docs/README.md"><strong>Examples</strong></a> ·
   <a href="docs/public/gates/migration.md"><strong>Migration guide</strong></a>
